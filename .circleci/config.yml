@@ -8,3 +8,6 @@ jobs:
       - run:
           name: dep install
           command: npm install
+      - run:
+          name: install codecov
+          command: npm run build
