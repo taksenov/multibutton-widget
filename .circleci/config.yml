@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: dep install
+          name: dependencies install
           command: npm install
       - run:
-          name: install codecov
+          name: build create
           command: npm run build
