@@ -44,7 +44,7 @@ class Widget extends Component {
    * @memberof Widget
    */
   componentDidMount() {
-    const thisScript = document.querySelector('[data-name-script="sliza"]');
+    const thisScript = document.querySelector('[data-name-script="someAbstract"]');
     let parsers;
     if (!thisScript) {
       loggerSettingsError();
