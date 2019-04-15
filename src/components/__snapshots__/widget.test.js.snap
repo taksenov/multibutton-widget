@@ -4,6 +4,11 @@ exports[`<Widget /> open/close 1`] = `
 <Widget>
   <div
     className="docked-widget"
+    style={
+      Object {
+        "right": "20px",
+      }
+    }
   >
     <Transition
       appear={false}
@@ -23,39 +28,81 @@ exports[`<Widget /> open/close 1`] = `
       <div
         className="widget widget-exited"
       >
-        <div
-          className="widget-header"
+        <ButtonsList
+          left={false}
+          onButtonClick={[Function]}
+          parsers={Array []}
+        >
+          <div />
+        </ButtonsList>
+        <MainButton
+          altText="Close"
+          backgroundColor="#969696"
+          handleToggleOpen={[Function]}
+          image="close.svg"
+          left={false}
         >
           <div
-            className="widget-header-title"
+            className="buttonDock"
+            style={
+              Object {
+                "justifyContent": "flex-end",
+              }
+            }
           >
-            Header
+            <div
+              className="buttonWrapper"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#969696",
+                }
+              }
+            >
+              <img
+                alt="Close"
+                height={50}
+                src="close.svg"
+                width={50}
+              />
+            </div>
           </div>
-          <a
-            className="widget-header-icon"
-            onClick={[Function]}
-          >
-            X
-          </a>
-        </div>
-        <div
-          className="widget-body"
-        >
-          Body
-        </div>
-        <div
-          className="widget-footer"
-        >
-          Footer
-        </div>
+        </MainButton>
       </div>
     </Transition>
-    <a
-      className="dock"
-      onClick={[Function]}
+    <MainButton
+      altText="sliza.ru"
+      backgroundColor="#DD9021"
+      handleToggleOpen={[Function]}
+      image="slizaDock.svg"
+      left={false}
     >
-      ^ OPEN ^
-    </a>
+      <div
+        className="buttonDock"
+        style={
+          Object {
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <div
+          className="buttonWrapper"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#DD9021",
+            }
+          }
+        >
+          <img
+            alt="sliza.ru"
+            height={50}
+            src="slizaDock.svg"
+            width={50}
+          />
+        </div>
+      </div>
+    </MainButton>
   </div>
 </Widget>
 `;
