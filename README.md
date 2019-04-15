@@ -1,5 +1,7 @@
 # Виджет "Мультикнопка"
 
+[![CircleCI](https://circleci.com/gh/taksenov/multibutton-widget.svg?style=svg)](https://circleci.com/gh/taksenov/multibutton-widget)
+
 ## Структура
 
 На `22-03-2019` структура следующая:
