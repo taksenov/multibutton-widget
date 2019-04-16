@@ -12,18 +12,16 @@ jobs:
           name: build create
           command: npm run build
 
-  deploy-job:
+  deploy:
     machine:
       enabled: true
     steps:
       - add_ssh_keys:
           fingerprints:
             - "89:62:d2:4a:de:3f:75:da:21:81:45:95:9d:2c:ab:a9"
-
-  deploy:
-    machine:
-      enabled: true
-    steps:
+      - run:
+          name: fix host authenticity for production server
+          command: ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
       - run:
           name: Deploy Over SSH
           command: |
