@@ -11,11 +11,15 @@ jobs:
       - run:
           name: build create
           command: npm run build
+
   deploy-job:
+    machine:
+      enabled: true
     steps:
       - add_ssh_keys:
           fingerprints:
             - "89:62:d2:4a:de:3f:75:da:21:81:45:95:9d:2c:ab:a9"
+
   deploy:
     machine:
       enabled: true
@@ -24,8 +28,7 @@ jobs:
           name: Deploy Over SSH
           command: |
             scp -v -o StrictHostKeyChecking=no -r build $SSH_USER@$SSH_HOST:/home/test/build-test
-# ssh $SSH_USER@$SSH_HOST "<remote deploy command>"
-# scp -v -o StrictHostKeyChecking=no -r build $SSH_USER@$SSH_HOST:/test/build-data
+
 workflows:
   version: 2
   build-and-deploy:
