@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -v -r build $SSH_USER@$SSH_HOST:/home/test/build-test
+            scp -v -o StrictHostKeyChecking=no -r build $SSH_USER@$SSH_HOST:/home/test/build-test
 
 workflows:
   version: 2
