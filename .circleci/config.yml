@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Deploy Over SSH (2)
           command: |
-            ls
+            scp -v -r ./* $SSH_USER@$SSH_HOST:/home/test/build-test
 
 workflows:
   version: 2
