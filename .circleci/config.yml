@@ -34,7 +34,7 @@ jobs:
           name: Test SSH echo(2 without)
           command: |
             ssh -v $SSH_USER@$SSH_HOST
-            "echo TEST#2 CircleCI"
+            "echo TEST#2  CircleCI"
       - run:
           name: Deploy Over SSH
           command: |
