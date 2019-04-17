@@ -39,10 +39,14 @@ jobs:
       #     name: Deploy Over SSH
       #     command: |
       #       scp -v ~/app/* -r build $SSH_USER@$SSH_HOST:/home/test/build-test
+      # - run:
+      #     name: Deploy Over SSH (2)
+      #     command: |
+      #       scp -v -r app $SSH_USER@$SSH_HOST:/home/test/build-test
       - run:
           name: Deploy Over SSH (2)
           command: |
-            scp -v -r app $SSH_USER@$SSH_HOST:/home/test/build-test
+            ls
 
 workflows:
   version: 2
