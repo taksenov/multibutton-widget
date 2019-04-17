@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: node:10
+    working_directory: ~/app
     steps:
       - checkout
       - run:
@@ -17,17 +18,17 @@ jobs:
       enabled: true
     steps:
       - checkout
-      - run:
-          name: fix host authenticity for production server
-          command: |
-            ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
-      - add_ssh_keys:
-          fingerprints:
-            - "89:62:d2:4a:de:3f:75:da:21:81:45:95:9d:2c:ab:a9"
+      # - run:
+      #     name: fix host authenticity for production server
+      #     command: |
+      #       ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+      # - add_ssh_keys:
+      #     fingerprints:
+      #       - "89:62:d2:4a:de:3f:75:da:21:81:45:95:9d:2c:ab:a9"
       - run:
           name: Deploy Over SSH
           command: |
-            scp -v -r build $SSH_USER@$SSH_HOST:/home/test/build-test
+            scp -v -o StrictHostKeyChecking=no -r build $SSH_USER@$SSH_HOST://home/test/build-test/
 
 workflows:
   version: 2
