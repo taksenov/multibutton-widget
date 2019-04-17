@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/app
     docker:
       - image: node:10
-    working_directory: ~/app
     steps:
       - checkout
       - run:
@@ -35,10 +35,10 @@ jobs:
       #     command: |
       #       ssh -v $SSH_USER@$SSH_HOST
       #       "echo TEST#2 CircleCI | exit"
-      - run:
-          name: Deploy Over SSH
-          command: |
-            scp -v ~/app/* -r build $SSH_USER@$SSH_HOST:/home/test/build-test
+      # - run:
+      #     name: Deploy Over SSH
+      #     command: |
+      #       scp -v ~/app/* -r build $SSH_USER@$SSH_HOST:/home/test/build-test
       - run:
           name: Deploy Over SSH (2)
           command: |
