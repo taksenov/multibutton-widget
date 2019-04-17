@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Deploy Over SSH (2)
           command: |
-            scp -v ~/project -r build $SSH_USER@$SSH_HOST:/home/test/build-test
+            scp -v app -r build $SSH_USER@$SSH_HOST:/home/test/build-test
 
 workflows:
   version: 2
