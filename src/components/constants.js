@@ -25,7 +25,7 @@ export const PARSERS = {
   // Sliza
   'c2xpemFQYXJzZXI=': {
     id: 1,
-    title: 'Sliza',
+    title: 'Somebody',
     icon: 'slizaImage',
     domain: 'sliza.ru',
     color: '#DD9021',
